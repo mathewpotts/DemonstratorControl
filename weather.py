@@ -23,8 +23,7 @@ class weatherlogger:
         while True:
             ser = serial.Serial(self.COM,self.BAUDRATE,timeout=self.TIMEOUT)
             line = ser.readline().decode('ascii')
-            self.logger.info(line)
-            f = open(rotate_file(), "a")
+            f = open(self.rotate_file(), "a")
             print(line,file=f)
             f.close()
 
